@@ -3,8 +3,8 @@ package ru.vsu.cs.course2.a1pha;
 public class Person {
     private static long lastID = 0;
 
-    private long id;
-    private String name;
+    private final long id;
+    private final String name;
 
     public Person(String name) {
         this.name = name;

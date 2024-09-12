@@ -1,21 +1,27 @@
 package ru.vsu.cs.course2.a1pha;
 
+import ru.vsu.cs.course2.a1pha.place.Place;
+
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
 public class PersonInPlace {
-    private HashMap<Person, Place> personPosition = new HashMap<>();
+    private final HashMap<Person, Place> personPosition = new HashMap<>();
 
     public HashMap<Person, Place> getPersonPositions() {
-        return (HashMap<Person, Place>) personPosition.clone();
+        if (personPosition instanceof HashMap<Person, Place> personPositions){
+            return personPositions;
+        } else {
+            throw new RuntimeException("No information about person position");
+        }
     }
 
     public Place getPersonPlace(Person person) {
         return personPosition.get(person);
     }
 
-    public Set<Person> getPersonsInPlace(Place place) {
+    public Set<Person> getPersonsInPlace(final Place place) {
         Set<Person> persons = new HashSet<>();
         for (Person person : personPosition.keySet()) {
             if (personPosition.get(person).equals(place)) {
@@ -26,7 +32,7 @@ public class PersonInPlace {
         return persons;
     }
 
-    public void putPersonIntoPlace(Person person, Place place) {
+    public void putPersonIntoPlace(final Person person, final Place place) {
         personPosition.put(person, place);
     }
 

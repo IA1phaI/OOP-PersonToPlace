@@ -1,21 +1,19 @@
 package ru.vsu.cs.course2.a1pha;
 
+import ru.vsu.cs.course2.a1pha.place.*;
+
 import java.util.Random;
 
-/**
- * Hello world!
- *
- */
 public class App 
 {
     public static void main( String[] args )
     {
         PersonInPlace personInPlace = new PersonInPlace();
         Place[] places = new Place[]{
-                new Place("Paris"),
-                new Place("Moscow"),
-                new Place("Berlin"),
-                new Place("Voronezh")};
+                new ShoppingMall("Arena", new Address(AddressType.BOULEVARD, "Victory", 23, 'B')),
+                new EducationalInstitution("VSU", new Address(AddressType.SQUARE, "University's", 1)),
+                new Cafe("Central Yummy and the dot", new Address(AddressType.AVENUE, "Revolution's", 32, 'A')),
+                new Park("Dinamo", new Address(AddressType.STREET, "Lenin's"))};
         Person[] persons = new Person[]{
            new Person("Oleg"),
            new Person("Alex"),
@@ -28,7 +26,7 @@ public class App
 
         Random random = new Random();
         for (Person person : persons) {
-            personInPlace.putPersonIntoPlace(person, places[random.nextInt(places.length - 1)]);
+            personInPlace.putPersonIntoPlace(person, places[random.nextInt(places.length)]);
         }
         System.out.println(personInPlace);
     }
