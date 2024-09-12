@@ -7,7 +7,12 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class PersonInPlace {
+    private final Location location;
     private final HashMap<Person, Place> personPosition = new HashMap<>();
+
+    public PersonInPlace(Location location) {
+        this.location = location;
+    }
 
     public HashMap<Person, Place> getPersonPositions() {
         if (personPosition instanceof HashMap<Person, Place> personPositions){
@@ -62,11 +67,12 @@ public class PersonInPlace {
     public String toString() {
         HashMap<Place, HashSet<Person>> personsByPlaces = getPersonsByPlaces();
         StringBuilder sb = new StringBuilder();
+        sb.append(location.toString()).append("\n");
 
         for (Place place : getPlaces()) {
-            sb.append(place).append(":\n");
+            sb.append(String.format("\t%s:\n",place));
             for (Person person : personsByPlaces.get(place)) {
-                sb.append(String.format("\t%s\n", person));
+                sb.append(String.format("\t\t%s\n", person));
             }
         }
         return sb.toString();
