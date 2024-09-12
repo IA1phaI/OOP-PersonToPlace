@@ -9,6 +9,6 @@ public class EducationalInstitution extends Place {
 
     @Override
     public String toString() {
-        return String.format("EducationalInstitution %s", super.toString());
+        return String.format("Educational Institution %s", super.toString());
     }
 }

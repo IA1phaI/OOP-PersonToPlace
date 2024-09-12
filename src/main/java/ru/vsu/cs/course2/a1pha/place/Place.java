@@ -29,6 +29,6 @@ public class Place {
 
     @Override
     public String toString() {
-        return String.format("\"%s\" (place_id=%d, address=%s)", name, id, address);
+        return String.format("\"%s\" (place_id=%d, address=\"%s\")", name, id, address);
     }
 }

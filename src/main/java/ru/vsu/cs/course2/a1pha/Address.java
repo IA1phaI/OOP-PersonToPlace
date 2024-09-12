@@ -1,6 +1,5 @@
 package ru.vsu.cs.course2.a1pha;
 
-import java.io.IOException;
 import java.util.regex.Pattern;
 
 public class Address {
@@ -16,9 +15,7 @@ public class Address {
 
     /**
      *
-     * @param addressType
-     * @param addressName
-     * @param houseNumber Negative equals  none
+     * @param houseNumber Negative equals none
      * @param buildingNumber Negative equals none
      * @param buildingChar If not a letter, sets none
      */
@@ -34,6 +31,12 @@ public class Address {
         this.buildingChar = Pattern.matches("\\w", String.valueOf(buildingChar)) ?
                     buildingChar : 1;
     }
+
+    /**
+     *
+     * @param houseNumber Negative equals none
+     * @param buildingNumber Negative equals none
+     */
     public Address(AddressType addressType,
                    String addressName,
                    int houseNumber,
@@ -41,6 +44,11 @@ public class Address {
        this(addressType, addressName, houseNumber, buildingNumber, (char) 1);
     }
 
+    /**
+     *
+     * @param houseNumber Negative equals none
+     * @param buildingLetter If not a letter, sets none
+     */
     public Address(AddressType addressType,
                    String addressName,
                    int houseNumber,
