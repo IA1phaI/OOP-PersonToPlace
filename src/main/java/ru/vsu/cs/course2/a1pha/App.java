@@ -2,6 +2,8 @@ package ru.vsu.cs.course2.a1pha;
 
 import ru.vsu.cs.course2.a1pha.place.*;
 
+import java.io.File;
+import java.util.ArrayList;
 import java.util.Random;
 
 public class App 
@@ -16,25 +18,29 @@ public class App
                                 AddressType.BOULEVARD,
                                 "Victory's",
                                 23,
-                                'B')),
+                                'B'),
+                        new ArrayList<>()),
                 new EducationalInstitution(
                         "VSU",
                         new Address(
                                 AddressType.SQUARE,
                                 "University's",
-                                1)),
+                                1),
+                        new ArrayList<>()),
                 new Cafe(
                         "Central Yummy and the dot",
                         new Address(
                                 AddressType.AVENUE,
                                 "Revolution's",
                                 32,
-                                'A')),
+                                'A'),
+                        new File("")),
                 new Park(
                         "Dinamo",
                         new Address(
                                 AddressType.STREET,
-                                "Lenin's"))
+                                "Lenin's"),
+                        new File(""))
         };
 
         Person[] persons = new Person[]{
