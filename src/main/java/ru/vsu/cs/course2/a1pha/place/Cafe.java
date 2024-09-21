@@ -1,8 +1,11 @@
 package ru.vsu.cs.course2.a1pha.place;
 
 import ru.vsu.cs.course2.a1pha.Address;
+import ru.vsu.cs.course2.a1pha.NotificationService;
+import ru.vsu.cs.course2.a1pha.Person;
 
 import java.io.File;
+import java.util.List;
 
 public class Cafe extends Place {
 
@@ -13,8 +16,9 @@ public class Cafe extends Place {
         this.menu = menu;
     }
 
-    public File sendMenu(){
-        return menu;
+    public void sendMenuTo(List<Person> persons){
+        NotificationService.sendNotification(menu, persons);
+        System.out.printf("Menu sent to all users in %s\n", this);
     }
 
     @Override

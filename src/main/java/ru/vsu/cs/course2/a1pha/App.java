@@ -19,14 +19,14 @@ public class App
                                 "Victory's",
                                 23,
                                 'B'),
-                        new ArrayList<>()),
+                        new File("")),
                 new EducationalInstitution(
                         "VSU",
                         new Address(
                                 AddressType.SQUARE,
                                 "University's",
                                 1),
-                        new ArrayList<>()),
+                        new File("")),
                 new Cafe(
                         "Central Yummy and the dot",
                         new Address(

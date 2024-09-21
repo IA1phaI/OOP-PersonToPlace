@@ -1,8 +1,11 @@
 package ru.vsu.cs.course2.a1pha.place;
 
 import ru.vsu.cs.course2.a1pha.Address;
+import ru.vsu.cs.course2.a1pha.NotificationService;
+import ru.vsu.cs.course2.a1pha.Person;
 
 import java.io.File;
+import java.util.List;
 
 public class Park extends Place {
 
@@ -13,8 +16,9 @@ public class Park extends Place {
         this.sights = sights;
     }
 
-    public File sendSights() {
-        return sights;
+    public void sendSights(List<Person> persons) {
+        NotificationService.sendNotification(sights, persons);
+        System.out.printf("Sights to visit are sent to all persons in %s\n", this);
     }
 
     @Override
