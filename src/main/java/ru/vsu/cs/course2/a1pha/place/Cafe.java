@@ -7,6 +7,8 @@ public class Cafe extends Place {
         super(name, address);
     }
 
+    public void sendMenu(){}
+
     @Override
     public String toString() {
         return String.format("Cafe %s", super.toString());

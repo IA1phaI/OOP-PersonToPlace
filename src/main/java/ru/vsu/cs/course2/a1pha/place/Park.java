@@ -8,6 +8,8 @@ public class Park extends Place {
         super(name, address);
     }
 
+    public void sendPlacesToVisit() {}
+
     @Override
     public String toString() {
         return String.format("Park %s", super.toString());

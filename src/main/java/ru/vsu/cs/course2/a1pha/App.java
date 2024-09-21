@@ -14,7 +14,7 @@ public class App
                         "Arena",
                         new Address(
                                 AddressType.BOULEVARD,
-                                "Victory",
+                                "Victory's",
                                 23,
                                 'B')),
                 new EducationalInstitution(
