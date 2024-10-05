@@ -9,20 +9,20 @@ import ru.vsu.cs.course2.a1pha.place.Place;
 
 public class PersonInPlace {
   private final Date creationDate;
-  private static final SimpleDateFormat dateFormat;
-  private static final SimpleDateFormat timeFormat;
+  private static final SimpleDateFormat DATE_FORMAT;
+  private static final SimpleDateFormat TIME_FORMAT;
   private final Location location;
   private final HashMap<Person, Place> personPosition = new HashMap<>();
 
   static {
-    dateFormat = new SimpleDateFormat("dd.MM.YYYY HH:mm:ss");
-    timeFormat = new SimpleDateFormat("HH:mm:ss:S");
+    DATE_FORMAT = new SimpleDateFormat("dd.MM.YYYY HH:mm:ss");
+    TIME_FORMAT = new SimpleDateFormat("HH:mm:ss:S");
     log("Initialized connection to PersonInPlace class");
   }
 
   {
     creationDate = new Date();
-    log(String.format("Tracking STARTED. Full start time: %s", dateFormat.format(creationDate)));
+    log(String.format("Tracking STARTED. Full start time: %s", DATE_FORMAT.format(creationDate)));
   }
 
   public PersonInPlace(final Location location) {
@@ -31,7 +31,7 @@ public class PersonInPlace {
   }
 
   private static void log(String logMsg) {
-    System.out.printf("[%s] %s\n", timeFormat.format(new Date()), logMsg);
+    System.out.printf("[%s] %s\n", TIME_FORMAT.format(new Date()), logMsg);
   }
 
   public HashMap<Person, Place> getPersonPositions() {
